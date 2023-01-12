@@ -16,9 +16,11 @@ class DynamicModel
         this.m_deltaTime = 0.0;
         this.m_lastFrame = 0.0;
         this.m_time = 0.0;
-
-        this.m_model = new Model(modelPath);
-        this.m_animation = new Animation(modelPath, this.m_model);
+        
+		let modelFile = readFile(modelPath);
+        
+        this.m_model = new Model(modelFile);
+        this.m_animation = new Animation(modelFile, this.m_model);
         this.m_animator = new Animator(this.m_animation);
 
         this.m_shaderobj = new Shader("Shaders/dynamic_model.vert", "Shaders/dynamic_model.frag");

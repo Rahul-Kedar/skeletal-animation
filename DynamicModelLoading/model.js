@@ -6,12 +6,12 @@ class Model
 	m_BoneCounter;
 
 	// constructor, expects a filepath to a 3D model.
-	constructor(path)
+	constructor(modelFile)
 	{
         this.m_meshes = [];
         this.m_BoneInfoMap = new Map();
         this.m_BoneCounter = 0;
-		this.loadModel(path);
+		this.loadModel(modelFile);
 	}
 
 	// draws the model, and thus all its meshes
@@ -42,9 +42,8 @@ class Model
 	}
 
 	// loads a model with supported ASSIMP extensions from file and stores the resulting meshes in the meshes vector.
-	loadModel(animationPath)
+	loadModel(modelFile)
 	{
-		var modelFile = readFile(animationPath);
 		var Scene = JSON.parse(modelFile);
         
 		// process ASSIMP's root node recursively

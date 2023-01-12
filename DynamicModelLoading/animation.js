@@ -14,7 +14,7 @@ class Animation
 	m_RootNode;
 	m_BoneInfoMap;
     
-	constructor(animationPath, model)
+	constructor(modelFile, model)
 	{
 		this.m_Duration = 0.0;
 		this.m_TicksPerSecond = 0;
@@ -22,17 +22,11 @@ class Animation
 		this.m_RootNode = new AssimpNodeData();
 		this.m_BoneInfoMap = new Map();
 
-		var modelFile = readFile(animationPath);
-
 		var Scene = JSON.parse(modelFile);
         
-        if('animations' in Scene)
+        if(!'animations' in Scene)
         {
-            console.log("animations is present in Scene");
-        }
-        else
-        {
-            alert("animations is not present in Scene");
+            console.log("animations is not present in Scene");
         }
         
 		var animation = Scene.animations[0];
