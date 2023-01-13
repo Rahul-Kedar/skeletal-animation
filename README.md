@@ -24,6 +24,10 @@ myModel.uninitialize();
 
 ``` 
 
+## Output
+
+![skeletal animation output](Resources/Skeletal-Animation.gif)
+
 ## Credits
 
 This project is based on the [Skeletal Animation](https://learnopengl.com/Guest-Articles/2020/Skeletal-Animation) tutorial.
